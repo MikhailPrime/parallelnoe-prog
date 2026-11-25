@@ -99,7 +99,7 @@ for n in args.sizes:
     plt.ylabel("Время умножения, с")
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig(results_dir / "time_vs_size.png", dpi=160)
+    plt.savefig(results_dir / "ts.png", dpi=160)
     plt.close()
 
     print(f"Промежуточные результаты сохранены: N={n}", flush=True)
@@ -163,7 +163,7 @@ block = (
     "и среднее фактическое время умножения.\n\n"
     + source_header + source_rows
     + "\n### График зависимости времени от размера матрицы\n\n"
-    + "![График времени выполнения](results/time_vs_size.png)\n"
+    + "![График времени выполнения](results/ts.png)\n"
     + conclusion
 )
 
@@ -173,4 +173,4 @@ updated_report = (
     report_text[:start_index] + "\n\n" + block + "\n" + report_text[end_index:]
 )
 report_path.write_text(updated_report, encoding="utf-8")
-print("Готово: README.md, results/results.csv и results/time_vs_size.png обновлены.")
+print("Готово: README.md, results/results.csv и results/ts.png обновлены.")
